@@ -134,17 +134,72 @@ if customerAge > 21 {
     print("You can have a drink!")
 } else if customerAge == 21 {
     canDrink = true
-    print("Happy Birthday! Your first drink is on the house.")
+//    print("Happy Birthday! Your first drink is on the house.")
 } else {
     canDrink = false
-    print("Unfortunately you're not old enough. I see you're \(customerAge) years old.")
+//    print("Unfortunately you're not old enough. I see you're \(customerAge) years old.")
 }
 
-// Combining conditions
-let goodWeather = true
+/*
+ Combining conditions
+*/
+let goodWeather = false
 let haveMoney = false
+
+// Use `&&` to compare if both items are true
 if goodWeather && haveMoney {
-    print("It's good weather and I just got paid. Let's go to brunch!")
+//    print("It's good weather and I just got paid. Let's go to brunch!")
 } else {
-    print("It's either not great weather or I dont have money. I don't want to go.")
+//    print("It's either not great weather or I dont have money. I don't want to go.")
 }
+
+// Use `||` to compare if either item is true
+if goodWeather || haveMoney {
+//    print("It's either nice out or I have money. Today is a good day")
+} else {
+//    print("I have neither good weather or any money. I need to go to work.")
+}
+
+/*
+ Ternary operator
+ - Checks a condition specified in the first value
+ - If it’s true returns the second value, but if it’s false returns the third value.
+ */
+let score1 = 10
+let score2 = 20
+print(score1 == score2 ? "They are the same score" : "They are different scores")
+
+/* Switch statements
+ - Allow you to compare a value to different cases
+ - Must be exhaustive and a default value can be provided
+ */
+
+let color = "blue"
+switch color {
+case "red":
+    print("The fire is red")
+case "blue":
+    print("The sky is blue")
+case "green":
+    print("The grass is green")
+default:
+    print("I don't know that color")
+}
+
+/*
+ Range operators
+ - `..<` - The half open range operator is up to BUT excluding the final value
+ - `...` - The closed ranged operator is up to AND includes the final value
+ - You can use `fallthrough` within your switch statements to group similar actions into the same step.
+ */
+let score = 40
+
+switch score {
+case 0..<50:
+    fallthrough
+case 50..<85:
+    print("You did OK.")
+default:
+    print("You did great!")
+}
+
