@@ -203,3 +203,68 @@ default:
     print("You did great!")
 }
 
+/*
+ Loops
+ - You can loop over arrays & ranges
+ */
+let albums = ["Red", "1989", "Reputation"]
+for album in albums {
+    print("\(album) is on Apple Music")
+}
+
+// If you don't need the value, you should use an `_` to not create unnecessary variables
+print("Players gonna ")
+for _ in 1...5 {
+    print("play")
+}
+
+// While loops will run indefinitely until a condition changes.
+// Condition checks will occur at the beginning of the loop
+var number = 0
+while number < 5 {
+    print("Current value of number is \(number). Incrementing it by one.")
+    number += 1
+}
+
+// Repeat loops use a condition check at the end of each loop.
+// Repeat loops will always run at leasts once.
+var value1 = 1
+repeat {
+    print(value1)
+    value1 += 1
+} while value1 <= 20
+
+// Loops can be ended early by using the `break` keyword
+var countDown = 10
+while countDown >= 0 {
+
+    if countDown == 4 {
+//        print("I'm bored. Let's go now!")
+        break
+    }
+    countDown -= 1
+}
+
+// Nest multiple loops and break out of specific ones by assigning a label and `break <label>`
+// `continue` will skip the current loop
+outerLoop: for i in 1...10 {
+    innerLoop: for j in 1...10 {
+        
+        if i == 6 || j == 6 { continue }
+        
+        let product = i * j
+        print ("\(i) * \(j) is \(product)")
+        
+        if product == 50 {
+            print("It's a bullseye!")
+            break outerLoop
+        }
+    }
+}
+
+// Infinite loops can run until they're either broken out of or the condition changes
+var counter = 0
+while true {
+    counter += 1
+    if counter == 273 { break }
+}
