@@ -1,5 +1,5 @@
-import UIKit
-import SwiftUI
+//: ## Functions
+//: [Next](@next) - [Previous](@previous) - [Introduction](Introduction)
 
 func printHelp() {
     let message = "Help is on the way!"

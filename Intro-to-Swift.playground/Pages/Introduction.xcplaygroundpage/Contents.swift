@@ -1,5 +1,12 @@
-import UIKit
-import SwiftUI
+//: ## Introduction
+//: [Next](@next) - [Previous](@previous)
+//: ### Table of Contents
+//: * [Functions](Functions)
+//: * [Closures](Closures)
+//: * [Functions](Functions)
+//: * [Structs](Structs)
+//: * [Classes](Classes)
+
 
 /*
  String interpolation allows you to insert variables into strings.
