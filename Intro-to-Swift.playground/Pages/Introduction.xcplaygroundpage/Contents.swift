@@ -6,6 +6,9 @@
 //: * [Functions](Functions)
 //: * [Structs](Structs)
 //: * [Classes](Classes)
+//: * [Protocols & Extensions](Protocols & Extensions)
+//: * [Optionals](Optionals)
+
 
 
 /*
