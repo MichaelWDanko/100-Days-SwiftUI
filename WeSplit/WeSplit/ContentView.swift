@@ -12,17 +12,18 @@ struct ContentView: View {
     @State private var name = ""
     
     var body: some View {
-        Form {
-            Button("Tap Me: \(tapCount)") {
-                tapCount += 1
+        NavigationView {
+            Form {
+                Button("Tap Me: \(tapCount)") { tapCount += 1 }
+                
+                TextField("Enter your name", text: $name)
+                
+                if name != "" {
+                    Text("My name is \(name)")
+                }
+                
             }
-            
-            TextField("Enter your name", text: $name)
-            
-            if name != "" {
-                Text("My name is \(name)")
-            }
-            
+            .navigationTitle("We Split App")
         }
     }
 }
