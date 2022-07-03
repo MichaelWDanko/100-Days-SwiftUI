@@ -11,9 +11,11 @@
 		DAF30598287133C50080234C /* ConversionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF30597287133C50080234C /* ConversionView.swift */; };
 		DAF3059A287133C90080234C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAF30599287133C90080234C /* Assets.xcassets */; };
 		DAF3059D287133C90080234C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAF3059C287133C90080234C /* Preview Assets.xcassets */; };
-		DAF305C22871C9C00080234C /* MeasurementUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF305C12871C9C00080234C /* MeasurementUnits.swift */; };
+		DAF305C22871C9C00080234C /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF305C12871C9C00080234C /* Protocols.swift */; };
 		DAF305C42871EE370080234C /* Length.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF305C32871EE370080234C /* Length.swift */; };
 		DAF305C62871EE810080234C /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF305C52871EE810080234C /* Temperature.swift */; };
+		DAF305C82871F8AF0080234C /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF305C72871F8AF0080234C /* StartView.swift */; };
+		DAF305CE2871FF870080234C /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF305CD2871FF870080234C /* Structs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,9 +45,11 @@
 		DAF305AC287133C90080234C /* UnitConversionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitConversionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF305BF2871356C0080234C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DAF305C02871B2950080234C /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		DAF305C12871C9C00080234C /* MeasurementUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementUnits.swift; sourceTree = "<group>"; };
+		DAF305C12871C9C00080234C /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		DAF305C32871EE370080234C /* Length.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Length.swift; sourceTree = "<group>"; };
 		DAF305C52871EE810080234C /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
+		DAF305C72871F8AF0080234C /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		DAF305CD2871FF870080234C /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +102,9 @@
 			children = (
 				DAF30599287133C90080234C /* Assets.xcassets */,
 				DAF30595287133C50080234C /* UnitConversionApp.swift */,
-				DAF30597287133C50080234C /* ConversionView.swift */,
-				DAF305C12871C9C00080234C /* MeasurementUnits.swift */,
-				DAF305C32871EE370080234C /* Length.swift */,
-				DAF305C52871EE810080234C /* Temperature.swift */,
+				DAF305CA2871FE9E0080234C /* Views */,
+				DAF305CF2871FFA50080234C /* Definitions */,
+				DAF305CC2871FF570080234C /* Measurement Structs */,
 				DAF3059B287133C90080234C /* Preview Content */,
 			);
 			path = UnitConversion;
@@ -113,6 +116,33 @@
 				DAF3059C287133C90080234C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DAF305CA2871FE9E0080234C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DAF305C72871F8AF0080234C /* StartView.swift */,
+				DAF30597287133C50080234C /* ConversionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DAF305CC2871FF570080234C /* Measurement Structs */ = {
+			isa = PBXGroup;
+			children = (
+				DAF305C32871EE370080234C /* Length.swift */,
+				DAF305C52871EE810080234C /* Temperature.swift */,
+			);
+			path = "Measurement Structs";
+			sourceTree = "<group>";
+		};
+		DAF305CF2871FFA50080234C /* Definitions */ = {
+			isa = PBXGroup;
+			children = (
+				DAF305C12871C9C00080234C /* Protocols.swift */,
+				DAF305CD2871FF870080234C /* Structs.swift */,
+			);
+			path = Definitions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,7 +277,9 @@
 			files = (
 				DAF30598287133C50080234C /* ConversionView.swift in Sources */,
 				DAF305C42871EE370080234C /* Length.swift in Sources */,
-				DAF305C22871C9C00080234C /* MeasurementUnits.swift in Sources */,
+				DAF305C82871F8AF0080234C /* StartView.swift in Sources */,
+				DAF305CE2871FF870080234C /* Structs.swift in Sources */,
+				DAF305C22871C9C00080234C /* Protocols.swift in Sources */,
 				DAF305C62871EE810080234C /* Temperature.swift in Sources */,
 				DAF30596287133C50080234C /* UnitConversionApp.swift in Sources */,
 			);
