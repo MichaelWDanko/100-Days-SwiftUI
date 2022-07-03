@@ -12,38 +12,30 @@ protocol MeasurementUnit {
     var type: String {get set}
     var unitsArray: [String] {get set}
     mutating func convert(value: Double, from fromValue: String, to toValue: String) -> Double
+    mutating func convertToSmallest(value: Double, from fromValue: String) -> Double
 }
 
 struct Length: MeasurementUnit {
 
     var type = "length"
     var unitsArray = [
-        "centimeters"
-        ,"meters"
-        ,"kilometers"
+        "centimeter(s)"
+        ,"meter(s)"
+        ,"kilometer(s)"
 //        ,"feet"
 //        ,"yards"
 //        ,"miles"
     ]
     var lengthInCentimeters: Double = 0
     
-    
-//    var newLength: Double = 0
-
-    //    enum units: String, CaseIterable {
-//        case centimeters = "centimeters"
-//        case meters = "meters"
-//    }
-//    var units = ["centimeters", "meters", "kilometers", "feet", "yards", "miles"]
-    
-    mutating func convertToCentimeters(value: Double, from fromValue: String) -> Double {
+    mutating func convertToSmallest(value: Double, from fromValue: String) -> Double {
         
         switch fromValue {
-        case "centimeters":
+        case "centimeter(s)":
             return value
-        case "meters":
+        case "meter(s)":
             return value * 100
-        case "kilometers":
+        case "kilometer(s)":
             return value * 1000
         default:
             print("""
@@ -61,19 +53,16 @@ struct Length: MeasurementUnit {
         if unitsArray.contains(fromValue) && unitsArray.contains(toValue) {
             // Check to make sure the types are within `unitsArray`
             
-            let centimeters = convertToCentimeters(value: value, from: fromValue)
+            let centimeters = convertToSmallest(value: value, from: fromValue)
             
             switch toValue {
             
-            case "centimeters":
+            case "centimeter(s)":
                 return centimeters
-                
-            case "meters":
+            case "meter(s)":
                 return centimeters / 100
-                
-            case "kilometers":
+            case "kilometer(s)":
                 return centimeters / 1000
-                
             default:
                 print("""
                     Something did not work in the switch statement for the `convert` method.
@@ -90,7 +79,6 @@ struct Length: MeasurementUnit {
     }
 }
 
-//let lengthTypes = ["centimeters", "meters", "kilometers", "feet", "yards", "miles"]
 let length = Length()
 @main
 struct UnitConversionApp: App {

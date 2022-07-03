@@ -17,6 +17,7 @@ struct ConversionView: View {
 
     @State var inputValue: String = ""
     @State var inputTypeSelection: String = ""
+    @FocusState var inputIsFocused: Bool
 
     @State var outputValue: String = ""
     @State var outputTypeSelection: String = ""
@@ -51,7 +52,7 @@ struct ConversionView: View {
                 }
 */
                 Section {
-                    Picker("Convert from:", selection: $inputTypeSelection) {
+                    Picker("Measurement type", selection: $inputTypeSelection) {
                         ForEach(measurementUnit.unitsArray, id: \.self) {
                             Text($0)
                         }
@@ -59,15 +60,26 @@ struct ConversionView: View {
                     TextField("Value", text: $inputValue)
                         .keyboardType(.decimalPad)
                         .multilineTextAlignment(.trailing)
+                        .focused($inputIsFocused)
+                    
+                    if inputValue != "" && inputTypeSelection != "" {
+                        Text("\(inputValue) \(inputTypeSelection)")
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                    }
+                } header: {
+                    Text("Convert from")
                 }
     
                 Section {
-                    Picker("Convert to:", selection: $outputTypeSelection) {
+                    Picker("Measurement type", selection: $outputTypeSelection) {
                         ForEach(measurementUnit.unitsArray, id: \.self) {
                             Text($0)
                         }
                     }
+                } header: {
+                    Text("To:")
                 }
+
                 Section {
                     HStack {
                         Spacer()
@@ -81,11 +93,20 @@ struct ConversionView: View {
                 Section {
                     if outputValue != "" && outputTypeSelection != "" {
                         Text("\(outputValue) \(outputTypeSelection)")
-                            .multilineTextAlignment(.trailing)
+                            .frame(maxWidth: .infinity, alignment: .trailing)
                     }
                 }
             }
             .navigationTitle("UnitConversion")
+            .navigationBarTitleDisplayMode(.automatic)
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard, content: {
+                    Spacer()
+                    Button("Done", action: {
+                        inputIsFocused = false
+                    })
+                })
+            }
         }
     }
 }
