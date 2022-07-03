@@ -22,13 +22,13 @@ struct Temperature: Measurement {
         let fromValueSingular = fromValue.singularName
         
         switch fromValueSingular {
-        case "Cº":
+        case "celsius":
             return value
 
-        case "Fº":
+        case "fahrenheit":
             return (value - 32) * (5/9)
 
-        case "Kº":
+        case "kelvin":
             return value - 273.15
 
         default:
@@ -46,7 +46,6 @@ struct Temperature: Measurement {
         
         let toValueSingularName = toValue.singularName
         let celsius = convertToSmallest(value: value, from: fromValue)
-        
         
         switch toValueSingularName {
         case "celsius":
@@ -67,59 +66,4 @@ struct Temperature: Measurement {
             return 0
         }
     }
-    
-    
 }
-
-
-/*
-struct Temperature: Measurement {
-    var type: String = "temperature"
-
-    var unitsArray: [String] = ["fahrenheit", "celsius", "kelvin"]
-
-    mutating func convertToSmallest(value: Double, from fromValue: String) -> Double {
-        // Convert to Celsius
-        switch fromValue {
-        case "celsius":
-            return value
-
-        case "fahrenheit":
-            return (value - 32) * (5/9)
-
-        case "kelvin":
-            return value - 273.15
-
-        default:
-            print("""
-                Something did not work in`convertToSmallest`.
-                The value used was: \(value)
-                The fromValue used was: \(fromValue)
-            """)
-            return 0
-        }
-    }
-
-    mutating func convert(value: Double, from fromValue: String, to toValue: String) -> Double {
-        // Convert from Celsius
-        switch fromValue {
-        case "celsius":
-            return value
-
-        case "fahrenheit":
-            return (value * 9/5) + 32
-
-        case "kelvin":
-            return value + 273.15
-
-        default:
-            print("""
-                Something did not work in`convertToSmallest`.
-                The value used was: \(value)
-                The fromValue used was: \(fromValue)
-            """)
-            return 0
-        }
-    }
-}
-*/
