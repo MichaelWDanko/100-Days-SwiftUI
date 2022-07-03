@@ -13,7 +13,7 @@ struct ConversionView: View {
     /*
      -- Variables --
      */
-    @State var measurementUnit: MeasurementUnit
+    @State var measurement: Measurement
 
     @State var inputValue: String = ""
     @State var inputTypeSelection: String = ""
@@ -35,8 +35,8 @@ struct ConversionView: View {
     }
     
     func calculateOutputValue() {
-        let inputDouble = Double(inputValue)!
-        let outputDouble = measurementUnit.convert(value: inputDouble, from: inputTypeSelection, to: outputTypeSelection)
+        let inputDouble = Double(inputValue) ?? Double(0)
+        let outputDouble = measurement.convert(value: inputDouble, from: inputTypeSelection, to: outputTypeSelection)
         outputValue = String(outputDouble)
     }
     
@@ -53,8 +53,10 @@ struct ConversionView: View {
 */
                 Section {
                     Picker("Measurement type", selection: $inputTypeSelection) {
-                        ForEach(measurementUnit.unitsArray, id: \.self) {
-                            Text($0)
+                        ForEach(measurement.unitsArray, id: \.self) {
+                            Text(
+                                String($0).capitalized
+                            )
                         }
                     }
                     TextField("Value", text: $inputValue)
@@ -62,17 +64,17 @@ struct ConversionView: View {
                         .multilineTextAlignment(.trailing)
                         .focused($inputIsFocused)
                     
-                    if inputValue != "" && inputTypeSelection != "" {
-                        Text("\(inputValue) \(inputTypeSelection)")
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                    }
+//                    if inputValue != "" && inputTypeSelection != "" {
+//                        Text("\(inputValue) \(inputTypeSelection)")
+//                            .frame(maxWidth: .infinity, alignment: .trailing)
+//                    }
                 } header: {
                     Text("Convert from")
                 }
     
                 Section {
                     Picker("Measurement type", selection: $outputTypeSelection) {
-                        ForEach(measurementUnit.unitsArray, id: \.self) {
+                        ForEach(measurement.unitsArray, id: \.self) {
                             Text($0)
                         }
                     }
@@ -93,7 +95,8 @@ struct ConversionView: View {
                 Section {
                     if outputValue != "" && outputTypeSelection != "" {
                         Text("\(outputValue) \(outputTypeSelection)")
-                            .frame(maxWidth: .infinity, alignment: .trailing)
+                            .bold()
+                            .frame(maxWidth: .infinity, alignment: .center)
                     }
                 }
             }
@@ -113,6 +116,6 @@ struct ConversionView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ConversionView(measurementUnit: length)
+        ConversionView(measurement: length)
     }
 }
