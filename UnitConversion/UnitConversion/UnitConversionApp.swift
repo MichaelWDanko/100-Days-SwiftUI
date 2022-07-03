@@ -14,8 +14,7 @@ let temperature = Temperature(unitsArray: temperatureOptions)
 struct UnitConversionApp: App {
     var body: some Scene {
         WindowGroup {
-            ConversionView(measurement: temperature)
-//            ConversionView(measurement: length)
+            StartView()
         }
     }
 }

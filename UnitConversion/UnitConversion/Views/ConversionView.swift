@@ -42,7 +42,6 @@ struct ConversionView: View {
     }
     
     var body: some View {
-        NavigationView {
             Form {
 /*:
  The following code doesn't work because $inputTypeSelection is set to be an Int and this is somehow expecting a String.
@@ -105,8 +104,10 @@ struct ConversionView: View {
                     }
                 }
             }
-            .navigationTitle("UnitConversion")
-            .navigationBarTitleDisplayMode(.automatic)
+            .navigationTitle(
+                String(measurement.type).capitalized
+            )
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItemGroup(placement: .keyboard, content: {
                     Spacer()
@@ -115,7 +116,6 @@ struct ConversionView: View {
                     })
                 })
             }
-        }
     }
 }
 
