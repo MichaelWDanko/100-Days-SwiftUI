@@ -1,20 +1,15 @@
 #  UnitConversion
 
-You need to build an app that handles unit conversions. Users will select an input unit and an output unit, then enter a value, and see the output of the conversion.
+** Create view with length conversion [Done] **
+- `meters`, `kilometers`, `feet`, `yards`, or `miles`
 
-**Units:**
-* Temperature conversion: users choose Celsius, Fahrenheit, or Kelvin.
-* Length conversion: users choose meters, kilometers, feet, yards, or miles.
-* Time conversion: users choose seconds, minutes, hours, or days.
-* Volume conversion: users choose milliliters, liters, cups, pints, or gallons.
+** Create view with temperature conversion [Done] **
+- `fahrenheit`, `celcius`, `kelvin`
 
+** Create view with time conversion [ToDo] **
+- `seconds`, `days`, `hours`, `weeks, `years`
 
-# Dev Items:
-**Create view with length conversion**
-- Users will have an input with a segmented selection of their input types
-- Supported input types: `meters`, `kilometers`, `feet`, `yards`, or `miles`
-- Users will have a text view of the output with a segmented selection of their input types
-- Supported input types: `meters`, `kilometers`, `feet`, `yards`, or `miles`
+** Create view with volume conversion [ToDo] **
+- `milliliters`, `liters`, `cups`, `pints`, `gallons`
 
-**Create view with time conversion**
-
+** Create styling around initial start view [ToDo] **
