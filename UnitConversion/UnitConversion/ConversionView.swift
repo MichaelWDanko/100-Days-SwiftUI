@@ -16,11 +16,12 @@ struct ConversionView: View {
     @State var measurement: Measurement
 
     @State var inputValue: String = ""
-    @State var inputTypeSelection: String = ""
+    @State var inputTypeSelection = Unit()
+
     @FocusState var inputIsFocused: Bool
 
     @State var outputValue: String = ""
-    @State var outputTypeSelection: String = ""
+    @State var outputTypeSelection = Unit()
     
     /*
      -- Methods --
@@ -52,10 +53,11 @@ struct ConversionView: View {
                 }
 */
                 Section {
+                // Values to be converted from
                     Picker("Measurement type", selection: $inputTypeSelection) {
-                        ForEach(measurement.unitsArray, id: \.self) {
+                        ForEach(measurement.unitsArray, id: \.self) { unit in
                             Text(
-                                String($0).capitalized
+                                String(unit.dynamicLabel).capitalized
                             )
                         }
                     }
@@ -73,9 +75,12 @@ struct ConversionView: View {
                 }
     
                 Section {
+                // Values to be converted to
                     Picker("Measurement type", selection: $outputTypeSelection) {
-                        ForEach(measurement.unitsArray, id: \.self) {
-                            Text($0)
+                        ForEach(measurement.unitsArray, id: \.self) { unit in
+                            Text(
+                                String(unit.dynamicLabel).capitalized
+                            )
                         }
                     }
                 } header: {
@@ -93,8 +98,8 @@ struct ConversionView: View {
                     }
                 }
                 Section {
-                    if outputValue != "" && outputTypeSelection != "" {
-                        Text("\(outputValue) \(outputTypeSelection)")
+                    if outputValue != "" && outputTypeSelection.abbreviation != "" {
+                        Text("\(outputValue) \(outputTypeSelection.singularName)")
                             .bold()
                             .frame(maxWidth: .infinity, alignment: .center)
                     }
@@ -113,6 +118,8 @@ struct ConversionView: View {
         }
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
