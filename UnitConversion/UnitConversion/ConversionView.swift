@@ -17,6 +17,7 @@ struct ConversionView: View {
 
     @State var inputValue: String = ""
     @State var inputTypeSelection = Unit()
+
     @FocusState var inputIsFocused: Bool
 
     @State var outputValue: String = ""
@@ -52,10 +53,11 @@ struct ConversionView: View {
                 }
 */
                 Section {
+                // Values to be converted from
                     Picker("Measurement type", selection: $inputTypeSelection) {
                         ForEach(measurement.unitsArray, id: \.self) { unit in
                             Text(
-                                String(unit.singularName + " / " + unit.pluralName).capitalized
+                                String(unit.dynamicLabel).capitalized
                             )
                         }
                     }
@@ -73,10 +75,11 @@ struct ConversionView: View {
                 }
     
                 Section {
+                // Values to be converted to
                     Picker("Measurement type", selection: $outputTypeSelection) {
                         ForEach(measurement.unitsArray, id: \.self) { unit in
                             Text(
-                                String(unit.singularName + " / " + unit.pluralName).capitalized
+                                String(unit.dynamicLabel).capitalized
                             )
                         }
                     }
@@ -115,6 +118,8 @@ struct ConversionView: View {
         }
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

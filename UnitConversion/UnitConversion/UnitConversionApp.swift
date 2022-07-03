@@ -8,12 +8,13 @@
 import SwiftUI
 
 let length = Length(unitsArray: lengthOptions)
-//let temperature = Temperature()
+let temperature = Temperature(unitsArray: temperatureOptions)
 
 @main
 struct UnitConversionApp: App {
     var body: some Scene {
         WindowGroup {
+//            ConversionView(measurement: temperature)
             ConversionView(measurement: length)
         }
     }
