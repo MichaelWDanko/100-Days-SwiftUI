@@ -6,7 +6,8 @@
         <page name='Closures'/>
         <page name='Structs'/>
         <page name='Classes'/>
-        <page name='Protocols &amp; Extensions'/>
+        <page name='Protocols-and-Extensions'/>
         <page name='Optionals'/>
+        <page name='Stacks-Colors-and-Frames'/>
     </pages>
 </playground>

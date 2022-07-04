@@ -1,4 +1,4 @@
-//: ## Protocols & Extensions
+//: ## Protocols and Extensions
 //: [Next](@next) - [Previous](@previous) - [Introduction](Introduction)
 
 import Foundation

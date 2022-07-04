@@ -6,8 +6,9 @@
 //: * [Functions](Functions)
 //: * [Structs](Structs)
 //: * [Classes](Classes)
-//: * [Protocols & Extensions](Protocols & Extensions)
+//: * [Protocols and Extensions](Protocols-and-Extensions)
 //: * [Optionals](Optionals)
+//: * [Stacks Colors and Frames] (Stacks-Colors-and-Frames)
 
 
 
