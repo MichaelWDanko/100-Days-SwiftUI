@@ -43,8 +43,14 @@ struct FlagPicker: View {
     
     var body: some View {
         ZStack {
-            Color.blue
+            
+            LinearGradient(gradient: Gradient(colors: [.blue, .mint]), startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
+            
+            Color.white
+                .opacity(0.50)
+                .ignoresSafeArea()
+            
             VStack(spacing: 30){
                 VStack {
                     Text("Tap the flag for")
@@ -69,7 +75,6 @@ struct FlagPicker: View {
                         self.flagPickerViewModel.submitAnswer(selection: number)
                     } label: {
                         VStack {
-                            Text("Number: \(number)")
                             Image(flagPickerViewModel.countries[number])
                                 .renderingMode(.original)
                         }
