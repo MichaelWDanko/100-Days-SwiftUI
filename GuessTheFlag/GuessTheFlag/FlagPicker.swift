@@ -47,7 +47,7 @@ struct FlagPicker: View {
             LinearGradient(gradient: Gradient(colors: [.blue, .mint]), startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             
-            Color.white
+            Color.secondary
                 .opacity(0.50)
                 .ignoresSafeArea()
             
