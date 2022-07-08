@@ -17,14 +17,13 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                LinearGradient(gradient: Gradient(colors: [.blue, .mint]), startPoint: .top, endPoint: .bottom)
-                    .ignoresSafeArea()
+                LinearGradient(gradient: Gradient(colors: [.blue, .white]), startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea(.all)
                 Color.accentColor
-                    .opacity(0.20)
+                    .opacity(0.10)
                     .ignoresSafeArea()
-                    .background(.ultraThinMaterial)
-                VStack(spacing: 30) {
-                    VStack {
+                Form{
+                    Section {
                         Text("When do you want to wake up?")
                             .font(.headline)
 
@@ -35,55 +34,53 @@ struct MainView: View {
                     }
                     .padding()
                     
-                    VStack {
+                    Section {
                         Text("How many hours of sleep do you want?")
                             .font(.headline)
-                        
-    //                    Stepper("\(vm.sleepAmount.formatted()) hours", value: $vm.sleepAmount, in: 4...20, step: 0.25)
-                        
                         Stepper("\(vm.sleepAmount.formatted()) hours", value: $vm.sleepAmount,in: 4...20, step: 1) {_ in
                             vm.calculateBedTime()
-    //                        self.displayBedTime = true
                         }
                         
                     }
                     .padding()
                     
-                    VStack {
+                    Section {
                         Text("How many cups of coffee have you had today?")
                             .font(.headline)
-                        
-    //                    Stepper(value: $vm.coffeeAmount, in: 1...10, step: 1) {
-    //                        vm.coffeeAmount == 1 ? Text("1 cup"): Text("\(vm.coffeeAmount) cups")
-    //                    }
                         
                         Stepper(vm.coffeeAmount == 1 ? "1 cup" : "\(vm.coffeeAmount) cups",
                                 value: $vm.coffeeAmount,
                                 step: 1) {_ in
                             vm.calculateBedTime()
-//                            self.displayBedTime = true
                         }
                         
                     }
                     .padding()
                     
-                    VStack{
+                    Section{
                         if displayBedTime {
                             Text("You should go to bed at:")
                                 .font(.headline)
                             Text("\(vm.sleepTime.formatted(date: .omitted, time: .shortened))")
                                 .font(.largeTitle)
                         } else {
-                            Button("Calculate", action: {
+                            Button {
                                 vm.calculateBedTime()
                                 self.displayBedTime = true
-                            })
-                            .font(.title)
-                                .foregroundColor(.primary)
+                            } label: {
+                                HStack {
+                                    Spacer()
+                                    Text("Calculate Bed Time")
+                                        .font(.title)
+//                                        .bold()
+                                    Spacer()
+                                }
+                            } // End of Button label
                         }
                     }
                     
-                } // End of VStack
+                } // End of Form
+                .opacity(0.70)
             }
             .navigationTitle("BetterSleep")
             .toolbar {
@@ -95,12 +92,16 @@ struct MainView: View {
                         .foregroundColor(.primary)
                 }
             }
-        }
+        } // End of NavigationView
     }
-}
+} // End of MainView struct
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        Group {
+            MainView()
+                .preferredColorScheme(.light)
+                .previewInterfaceOrientation(.portrait)
+        }
     }
 }
