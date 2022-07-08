@@ -7,22 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA122506287281A5007C4BFB /* SwiftUI_SandboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA122505287281A5007C4BFB /* SwiftUI_SandboxApp.swift */; };
-		DA122508287281A5007C4BFB /* VibrancyEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA122507287281A5007C4BFB /* VibrancyEffect.swift */; };
-		DA12250A287281A6007C4BFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA122509287281A6007C4BFB /* Assets.xcassets */; };
-		DA12250D287281A6007C4BFB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA12250C287281A6007C4BFB /* Preview Assets.xcassets */; };
+		DA1225202877AEFF007C4BFB /* BetterRestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12251F2877AEFF007C4BFB /* BetterRestApp.swift */; };
+		DA1225222877AEFF007C4BFB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1225212877AEFF007C4BFB /* MainView.swift */; };
+		DA1225242877AF00007C4BFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1225232877AF00007C4BFB /* Assets.xcassets */; };
+		DA1225272877AF00007C4BFB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1225262877AF00007C4BFB /* Preview Assets.xcassets */; };
+		DA12252E2877BB12007C4BFB /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DA12252D2877BB12007C4BFB /* SleepCalculator.mlmodel */; };
+		DA1225302877BC15007C4BFB /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12252F2877BC15007C4BFB /* MainViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DA122502287281A5007C4BFB /* SwiftUI Sandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI Sandbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA122505287281A5007C4BFB /* SwiftUI_SandboxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_SandboxApp.swift; sourceTree = "<group>"; };
-		DA122507287281A5007C4BFB /* VibrancyEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrancyEffect.swift; sourceTree = "<group>"; };
-		DA122509287281A6007C4BFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DA12250C287281A6007C4BFB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DA12251C2877AEFF007C4BFB /* BetterRest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterRest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA12251F2877AEFF007C4BFB /* BetterRestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterRestApp.swift; sourceTree = "<group>"; };
+		DA1225212877AEFF007C4BFB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		DA1225232877AF00007C4BFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA1225262877AF00007C4BFB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DA12252D2877BB12007C4BFB /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SleepCalculator.mlmodel; path = BetterRest/SleepCalculator.mlmodel; sourceTree = "<group>"; };
+		DA12252F2877BC15007C4BFB /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DA1224FF287281A5007C4BFB /* Frameworks */ = {
+		DA1225192877AEFF007C4BFB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -32,37 +36,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DA1224F9287281A5007C4BFB = {
+		DA1225132877AEFF007C4BFB = {
 			isa = PBXGroup;
 			children = (
-				DA122504287281A5007C4BFB /* SwiftUI Sandbox */,
-				DA122503287281A5007C4BFB /* Products */,
+				DA12252D2877BB12007C4BFB /* SleepCalculator.mlmodel */,
+				DA12251E2877AEFF007C4BFB /* BetterRest */,
+				DA12251D2877AEFF007C4BFB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		DA122503287281A5007C4BFB /* Products */ = {
+		DA12251D2877AEFF007C4BFB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA122502287281A5007C4BFB /* SwiftUI Sandbox.app */,
+				DA12251C2877AEFF007C4BFB /* BetterRest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DA122504287281A5007C4BFB /* SwiftUI Sandbox */ = {
+		DA12251E2877AEFF007C4BFB /* BetterRest */ = {
 			isa = PBXGroup;
 			children = (
-				DA122505287281A5007C4BFB /* SwiftUI_SandboxApp.swift */,
-				DA122507287281A5007C4BFB /* VibrancyEffect.swift */,
-				DA122509287281A6007C4BFB /* Assets.xcassets */,
-				DA12250B287281A6007C4BFB /* Preview Content */,
+				DA12251F2877AEFF007C4BFB /* BetterRestApp.swift */,
+				DA1225212877AEFF007C4BFB /* MainView.swift */,
+				DA12252F2877BC15007C4BFB /* MainViewViewModel.swift */,
+				DA1225232877AF00007C4BFB /* Assets.xcassets */,
+				DA1225252877AF00007C4BFB /* Preview Content */,
 			);
-			path = "SwiftUI Sandbox";
+			path = BetterRest;
 			sourceTree = "<group>";
 		};
-		DA12250B287281A6007C4BFB /* Preview Content */ = {
+		DA1225252877AF00007C4BFB /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				DA12250C287281A6007C4BFB /* Preview Assets.xcassets */,
+				DA1225262877AF00007C4BFB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -70,39 +76,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DA122501287281A5007C4BFB /* SwiftUI Sandbox */ = {
+		DA12251B2877AEFF007C4BFB /* BetterRest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA122510287281A6007C4BFB /* Build configuration list for PBXNativeTarget "SwiftUI Sandbox" */;
+			buildConfigurationList = DA12252A2877AF00007C4BFB /* Build configuration list for PBXNativeTarget "BetterRest" */;
 			buildPhases = (
-				DA1224FE287281A5007C4BFB /* Sources */,
-				DA1224FF287281A5007C4BFB /* Frameworks */,
-				DA122500287281A5007C4BFB /* Resources */,
+				DA1225182877AEFF007C4BFB /* Sources */,
+				DA1225192877AEFF007C4BFB /* Frameworks */,
+				DA12251A2877AEFF007C4BFB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "SwiftUI Sandbox";
-			productName = "SwiftUI Sandbox";
-			productReference = DA122502287281A5007C4BFB /* SwiftUI Sandbox.app */;
+			name = BetterRest;
+			productName = BetterRest;
+			productReference = DA12251C2877AEFF007C4BFB /* BetterRest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		DA1224FA287281A5007C4BFB /* Project object */ = {
+		DA1225142877AEFF007C4BFB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					DA122501287281A5007C4BFB = {
+					DA12251B2877AEFF007C4BFB = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
 			};
-			buildConfigurationList = DA1224FD287281A5007C4BFB /* Build configuration list for PBXProject "SwiftUI Sandbox" */;
+			buildConfigurationList = DA1225172877AEFF007C4BFB /* Build configuration list for PBXProject "BetterRest" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,42 +116,44 @@
 				en,
 				Base,
 			);
-			mainGroup = DA1224F9287281A5007C4BFB;
-			productRefGroup = DA122503287281A5007C4BFB /* Products */;
+			mainGroup = DA1225132877AEFF007C4BFB;
+			productRefGroup = DA12251D2877AEFF007C4BFB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DA122501287281A5007C4BFB /* SwiftUI Sandbox */,
+				DA12251B2877AEFF007C4BFB /* BetterRest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DA122500287281A5007C4BFB /* Resources */ = {
+		DA12251A2877AEFF007C4BFB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA12250D287281A6007C4BFB /* Preview Assets.xcassets in Resources */,
-				DA12250A287281A6007C4BFB /* Assets.xcassets in Resources */,
+				DA1225272877AF00007C4BFB /* Preview Assets.xcassets in Resources */,
+				DA1225242877AF00007C4BFB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DA1224FE287281A5007C4BFB /* Sources */ = {
+		DA1225182877AEFF007C4BFB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA122508287281A5007C4BFB /* VibrancyEffect.swift in Sources */,
-				DA122506287281A5007C4BFB /* SwiftUI_SandboxApp.swift in Sources */,
+				DA1225222877AEFF007C4BFB /* MainView.swift in Sources */,
+				DA12252E2877BB12007C4BFB /* SleepCalculator.mlmodel in Sources */,
+				DA1225302877BC15007C4BFB /* MainViewViewModel.swift in Sources */,
+				DA1225202877AEFF007C4BFB /* BetterRestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		DA12250E287281A6007C4BFB /* Debug */ = {
+		DA1225282877AF00007C4BFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -205,7 +213,7 @@
 			};
 			name = Debug;
 		};
-		DA12250F287281A6007C4BFB /* Release */ = {
+		DA1225292877AF00007C4BFB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -259,14 +267,14 @@
 			};
 			name = Release;
 		};
-		DA122511287281A6007C4BFB /* Debug */ = {
+		DA12252B2877AF00007C4BFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI Sandbox/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BetterRest/Preview Content\"";
 				DEVELOPMENT_TEAM = PD8DBCPLQ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -280,7 +288,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.danko.SwiftUI-Sandbox";
+				PRODUCT_BUNDLE_IDENTIFIER = io.danko.BetterRest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -288,14 +296,14 @@
 			};
 			name = Debug;
 		};
-		DA122512287281A6007C4BFB /* Release */ = {
+		DA12252C2877AF00007C4BFB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI Sandbox/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BetterRest/Preview Content\"";
 				DEVELOPMENT_TEAM = PD8DBCPLQ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -309,7 +317,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.danko.SwiftUI-Sandbox";
+				PRODUCT_BUNDLE_IDENTIFIER = io.danko.BetterRest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -320,25 +328,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DA1224FD287281A5007C4BFB /* Build configuration list for PBXProject "SwiftUI Sandbox" */ = {
+		DA1225172877AEFF007C4BFB /* Build configuration list for PBXProject "BetterRest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DA12250E287281A6007C4BFB /* Debug */,
-				DA12250F287281A6007C4BFB /* Release */,
+				DA1225282877AF00007C4BFB /* Debug */,
+				DA1225292877AF00007C4BFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA122510287281A6007C4BFB /* Build configuration list for PBXNativeTarget "SwiftUI Sandbox" */ = {
+		DA12252A2877AF00007C4BFB /* Build configuration list for PBXNativeTarget "BetterRest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DA122511287281A6007C4BFB /* Debug */,
-				DA122512287281A6007C4BFB /* Release */,
+				DA12252B2877AF00007C4BFB /* Debug */,
+				DA12252C2877AF00007C4BFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = DA1224FA287281A5007C4BFB /* Project object */;
+	rootObject = DA1225142877AEFF007C4BFB /* Project object */;
 }
