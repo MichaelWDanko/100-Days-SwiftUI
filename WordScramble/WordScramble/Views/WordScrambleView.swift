@@ -7,21 +7,22 @@
 
 import SwiftUI
 
-struct WordScramble: View {
+struct WordScrambleView: View {
     
     @StateObject var viewModel = WordScrambleViewModel()
     
     @State var displayError = false
-    
     @State var newWordSubmission = ""
     
     var body: some View {
-        VStack {
-            Text("PLAYER SCORE: \(viewModel.playerScore)")
+        VStack(spacing: 30){
+            Text("SCORE: \(viewModel.playerScore)")
             Text("ROOT WORD: \(viewModel.rootWord)")
             TextField("Guess a new word", text: $newWordSubmission)
             Button {
-                if viewModel.makeWordSubmission(newWordSubmission) == false {
+                if viewModel.makeWordSubmission(newWordSubmission) == true {
+                    displayError = false
+                } else {
                     displayError = true
                 }
                 newWordSubmission = ""
@@ -29,16 +30,16 @@ struct WordScramble: View {
             } label: {
                 Text("Submit")
             }
-            Text("Error Title: \(viewModel.errorTitle)")
-            Text("Error Message: \(viewModel.errorMessage)")
-        }
-
-
+            if displayError {
+                Text("Error Title: \(viewModel.errorTitle)")
+                Text("Error Message: \(viewModel.errorMessage)")
+            }
+        }.padding(.horizontal)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        WordScramble()
+        WordScrambleView()
     }
 }

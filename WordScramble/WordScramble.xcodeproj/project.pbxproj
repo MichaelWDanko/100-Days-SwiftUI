@@ -8,23 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		DA12253E2878EA90007C4BFB /* WordScrambleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12253D2878EA90007C4BFB /* WordScrambleApp.swift */; };
-		DA1225402878EA90007C4BFB /* WordScramble.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12253F2878EA90007C4BFB /* WordScramble.swift */; };
+		DA1225402878EA90007C4BFB /* WordScrambleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12253F2878EA90007C4BFB /* WordScrambleView.swift */; };
 		DA1225422878EA91007C4BFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1225412878EA91007C4BFB /* Assets.xcassets */; };
 		DA1225452878EA91007C4BFB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1225442878EA91007C4BFB /* Preview Assets.xcassets */; };
 		DA12254C2878EB77007C4BFB /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = DA12254B2878EB77007C4BFB /* start.txt */; };
 		DA12254F2878EBA5007C4BFB /* WordScrambleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12254E2878EBA5007C4BFB /* WordScrambleViewModel.swift */; };
 		DAF902262879357600B37887 /* SubmittedAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF902252879357600B37887 /* SubmittedAnswer.swift */; };
+		DAF902282879944200B37887 /* WordScrambleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF902272879944200B37887 /* WordScrambleModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DA12253A2878EA90007C4BFB /* WordScramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordScramble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA12253D2878EA90007C4BFB /* WordScrambleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleApp.swift; sourceTree = "<group>"; };
-		DA12253F2878EA90007C4BFB /* WordScramble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScramble.swift; sourceTree = "<group>"; };
+		DA12253F2878EA90007C4BFB /* WordScrambleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleView.swift; sourceTree = "<group>"; };
 		DA1225412878EA91007C4BFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA1225442878EA91007C4BFB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DA12254B2878EB77007C4BFB /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 		DA12254E2878EBA5007C4BFB /* WordScrambleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleViewModel.swift; sourceTree = "<group>"; };
 		DAF902252879357600B37887 /* SubmittedAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmittedAnswer.swift; sourceTree = "<group>"; };
+		DAF902272879944200B37887 /* WordScrambleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +81,7 @@
 		DA12254D2878EB84007C4BFB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DA12253F2878EA90007C4BFB /* WordScramble.swift */,
+				DA12253F2878EA90007C4BFB /* WordScrambleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				DAF902252879357600B37887 /* SubmittedAnswer.swift */,
+				DAF902272879944200B37887 /* WordScrambleModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,8 +175,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA12254F2878EBA5007C4BFB /* WordScrambleViewModel.swift in Sources */,
+				DAF902282879944200B37887 /* WordScrambleModel.swift in Sources */,
 				DAF902262879357600B37887 /* SubmittedAnswer.swift in Sources */,
-				DA1225402878EA90007C4BFB /* WordScramble.swift in Sources */,
+				DA1225402878EA90007C4BFB /* WordScrambleView.swift in Sources */,
 				DA12253E2878EA90007C4BFB /* WordScrambleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
