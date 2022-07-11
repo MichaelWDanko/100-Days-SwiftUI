@@ -61,8 +61,8 @@
 			children = (
 				DA12253D2878EA90007C4BFB /* WordScrambleApp.swift */,
 				DAF902242879355D00B37887 /* Models */,
-				DA12254D2878EB84007C4BFB /* Views */,
 				DA1225502878EBB3007C4BFB /* ViewModels */,
+				DA12254D2878EB84007C4BFB /* Views */,
 				DA12254B2878EB77007C4BFB /* start.txt */,
 				DA1225412878EA91007C4BFB /* Assets.xcassets */,
 				DA1225432878EA91007C4BFB /* Preview Content */,

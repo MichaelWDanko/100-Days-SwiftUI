@@ -26,15 +26,25 @@ class WordScrambleViewModel: ObservableObject {
     var errorMessage: String {
         model.errorMessage
     }
+    func resetRootWord() {
+        model.resetRootWord()
+    }
     
     init() {
         
     }
 
-    func makeWordSubmission(_ word: String) -> Bool {
-        let answer = SubmittedAnswer(word: word.lowercased().trimmingCharacters(in: .whitespacesAndNewlines))
-        return model.makeWordSubmission(answer)
+    func makeWordSubmission(_ word: String) throws {
+        print("calling makeWordSubmission inside the ViewModel")
         
+        let answer = SubmittedAnswer(word: word.lowercased().trimmingCharacters(in: .whitespacesAndNewlines))
+        
+        do {
+            try model.makeWordSubmission(answer)
+        } catch {
+            print("error caught within makeWordSubmission inside the ViewModel")
+            throw error
+        }
     } // End of makeWordSubmission
 
 }

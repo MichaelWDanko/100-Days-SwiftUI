@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+enum ValidationErrors: Error {
+    case wordNotPossible
+    case wordNotSpelledCorrectly
+    case wordNotOriginal
+}
 
 struct WordScrambleModel {
     
@@ -24,7 +29,7 @@ struct WordScrambleModel {
     
     init() {
         loadWordFile()
-        setNewRootWord()
+        resetRootWord()
     }
     
     mutating func loadWordFile() {
@@ -37,24 +42,20 @@ struct WordScrambleModel {
         fatalError("The text file `start.txt` was unable to be loaded.")
     }
     
-    mutating func setNewRootWord() {
+    mutating func resetRootWord() {
         self.rootWord = self.wordArray.randomElement() ?? "ravenger"
+        self.playerScore = 0
     }
     
-    mutating func makeWordSubmission(_ answer: SubmittedAnswer) -> Bool {
+    mutating func makeWordSubmission(_ answer: SubmittedAnswer) throws {
         
-        if isWordPossible(answer.word) == false {
-            return false
-        }
-        if isWordSpelledCorrectly(answer.word) == false {
-            return false
-        }
-        if isWordOriginalGuess(answer.word) == false {
-            return false
-        }
+        if isWordPossible(answer.word) == false { throw ValidationErrors.wordNotPossible }
+       
+        if isWordSpelledCorrectly(answer.word) == false { throw ValidationErrors.wordNotSpelledCorrectly }
+            
+        if isWordOriginalGuess(answer.word) == false { throw ValidationErrors.wordNotOriginal }
         
         saveSubmittedAnswer(answer: answer)
-        return true
     }
     
     
@@ -81,8 +82,8 @@ struct WordScrambleModel {
         let range = NSRange(location: 0, length: submittedWord.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(in: submittedWord, range: range, startingAt: 0, wrap: false,language: "en")
         
-        errorTitle = "Spelled incorrectly"
-        errorMessage = "The submitted word is not spelled correctly."
+        errorTitle = "Not a word / Spelled incorrectly"
+        errorMessage = "The submitted word is either not a real word or is spelled incorrectly."
 
         // This code checks to see if the location of the misspelled word is `NSNotFound` or the Obj-C equivalent of `nil`.
         return misspelledRange.location == NSNotFound
@@ -105,6 +106,7 @@ struct WordScrambleModel {
     
     mutating func saveSubmittedAnswer(answer: SubmittedAnswer) {
         
+        print("Calling saveSubmittedAnswer")
         // Need to add word to the list of words already submitted.
         guessedWords.insert(answer.word)
         submittedAnswers.insert(answer, at: 0)
