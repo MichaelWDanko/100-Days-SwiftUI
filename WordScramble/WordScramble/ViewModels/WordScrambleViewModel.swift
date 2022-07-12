@@ -17,15 +17,23 @@ class WordScrambleViewModel: ObservableObject {
     var rootWord: String {
         model.rootWord
     }
+    
     var playerScore: Int {
         model.playerScore
     }
+    
     var errorTitle: String {
         model.errorTitle
     }
+    
     var errorMessage: String {
         model.errorMessage
     }
+    
+    var submittedAnswers: [SubmittedAnswer] {
+        model.submittedAnswers
+    }
+    
     func resetRootWord() {
         model.resetRootWord()
     }
@@ -42,7 +50,6 @@ class WordScrambleViewModel: ObservableObject {
         do {
             try model.makeWordSubmission(answer)
         } catch {
-            print("error caught within makeWordSubmission inside the ViewModel")
             throw error
         }
     } // End of makeWordSubmission

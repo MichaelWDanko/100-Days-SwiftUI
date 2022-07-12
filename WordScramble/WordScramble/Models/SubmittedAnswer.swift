@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SubmittedAnswer {
+struct SubmittedAnswer: Identifiable {
     var id = UUID().uuidString
     
     var word: String

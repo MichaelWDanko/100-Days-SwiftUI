@@ -15,6 +15,7 @@
 		DA12254F2878EBA5007C4BFB /* WordScrambleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12254E2878EBA5007C4BFB /* WordScrambleViewModel.swift */; };
 		DAF902262879357600B37887 /* SubmittedAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF902252879357600B37887 /* SubmittedAnswer.swift */; };
 		DAF902282879944200B37887 /* WordScrambleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF902272879944200B37887 /* WordScrambleModel.swift */; };
+		DAF9022A287CFE0E00B37887 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF90229287CFE0E00B37887 /* InstructionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		DA12254E2878EBA5007C4BFB /* WordScrambleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleViewModel.swift; sourceTree = "<group>"; };
 		DAF902252879357600B37887 /* SubmittedAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmittedAnswer.swift; sourceTree = "<group>"; };
 		DAF902272879944200B37887 /* WordScrambleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleModel.swift; sourceTree = "<group>"; };
+		DAF90229287CFE0E00B37887 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				DA12253F2878EA90007C4BFB /* WordScrambleView.swift */,
+				DAF90229287CFE0E00B37887 /* InstructionsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA12254F2878EBA5007C4BFB /* WordScrambleViewModel.swift in Sources */,
+				DAF9022A287CFE0E00B37887 /* InstructionsView.swift in Sources */,
 				DAF902282879944200B37887 /* WordScrambleModel.swift in Sources */,
 				DAF902262879357600B37887 /* SubmittedAnswer.swift in Sources */,
 				DA1225402878EA90007C4BFB /* WordScrambleView.swift in Sources */,

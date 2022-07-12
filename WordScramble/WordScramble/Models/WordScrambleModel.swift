@@ -13,7 +13,7 @@ enum ValidationErrors: Error {
     case wordNotSpelledCorrectly
     case wordNotOriginal
 }
-
+ 
 struct WordScrambleModel {
     
     public var wordArray = [String]()
@@ -24,8 +24,8 @@ struct WordScrambleModel {
     
     public var playerScore = 0
     
-    public var errorTitle = ""
-    public var errorMessage = ""
+    public var errorTitle = "Error Title"
+    public var errorMessage = "Error Message"
     
     init() {
         loadWordFile()
