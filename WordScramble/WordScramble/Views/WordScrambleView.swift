@@ -82,11 +82,13 @@ struct WordScrambleView: View {
                             .background {
                                 RoundedRectangle(cornerRadius: 5).fill(Color.appTextBackground)
                             }
+                            .border(displayError ? Color.appErrorRed : .clear, width: 2)
                         Button() {
                             print("submitted; attempting to call function that might throw")
                             
                             do {
                                try viewModel.makeWordSubmission(newWordSubmission)
+                                displayError = false
                             } catch {
                                 print("caught an error within the view")
                                 displayError = true
@@ -103,16 +105,28 @@ struct WordScrambleView: View {
                         }
                     }
                     if displayError {
-                        ZStack {
+                        VStack {
+                            Text("\(viewModel.errorTitle)")
+                                .bold()
+                                .padding(.bottom)
+                            Text("\(viewModel.errorMessage)")
+                                .padding(.bottom)
+                                .multilineTextAlignment(.center)
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: 120, alignment: .center)
+                        .background {
                             Rectangle()
-                                .background(.thinMaterial)
-                            VStack {
-                                Text("Error Title: \(viewModel.errorTitle)")
-                                Text("Error Message: \(viewModel.errorMessage)")
-                            }
+                                .background(.thickMaterial)
+                                .border(displayError ? Color.appErrorRed : .clear, width: 2)
                         }
                     }
-                   
+                    List(viewModel.submittedAnswers) { item in
+                        HStack {
+                            Text("\(item.pointValue)")
+                            Text("\(item.word)")
+                                .bold()
+                        }
+                    }
                     Spacer()
                 
                 } // End of VStack
