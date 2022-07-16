@@ -27,6 +27,16 @@ struct WordScrambleModel {
     public var errorTitle = "Error Title"
     public var errorMessage = "Error Message"
     
+    public var gameInstructions: String = """
+    Players will get a score for each attempt that is based upon the length of the submitted word.
+    
+    Words between 1 and 3 characters will get 1x the word length.
+    
+    Words between 4 and 6 characters will get 1x the word length +2 bonus points.
+    
+    All other words will get 1x the word length +3 bonus points.
+    """
+    
     init() {
         loadWordFile()
         resetRootWord()
@@ -50,16 +60,16 @@ struct WordScrambleModel {
     mutating func makeWordSubmission(_ answer: SubmittedAnswer) throws {
         
         if isWordPossible(answer.word) == false { throw ValidationErrors.wordNotPossible }
-       
         if isWordSpelledCorrectly(answer.word) == false { throw ValidationErrors.wordNotSpelledCorrectly }
-            
         if isWordOriginalGuess(answer.word) == false { throw ValidationErrors.wordNotOriginal }
-        
         saveSubmittedAnswer(answer: answer)
     }
     
     
     mutating func isWordPossible(_ submittedWord: String) -> Bool {
+        if submittedWord.isEmpty {
+            return false
+        }
         var rootWordCopy = self.rootWord
 
         for letter in submittedWord {
@@ -72,7 +82,6 @@ struct WordScrambleModel {
             }
         }
         return true
-        
     } // End of `isWordPossible` function
     
     mutating func isWordSpelledCorrectly(_ submittedWord:String) -> Bool {
@@ -87,7 +96,6 @@ struct WordScrambleModel {
 
         // This code checks to see if the location of the misspelled word is `NSNotFound` or the Obj-C equivalent of `nil`.
         return misspelledRange.location == NSNotFound
-        
     } // End of `isWordSpelledCorrectly` function
     
     

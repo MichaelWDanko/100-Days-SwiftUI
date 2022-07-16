@@ -14,6 +14,7 @@ class WordScrambleViewModel: ObservableObject {
     
     @Published var model = WordScrambleModel()
     
+    //MARK: WordScrambleViewModel variables
     var rootWord: String {
         model.rootWord
     }
@@ -33,6 +34,12 @@ class WordScrambleViewModel: ObservableObject {
     var submittedAnswers: [SubmittedAnswer] {
         model.submittedAnswers
     }
+    
+    var gameInstructions: String {
+        model.gameInstructions
+    }
+    
+    //MARK: WordScrambleViewModel functions
     
     func resetRootWord() {
         model.resetRootWord()

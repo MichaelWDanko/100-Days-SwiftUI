@@ -1,5 +1,5 @@
 //
-//  SubmittedAnswer.swift
+//  SubmittedAnswerStruct.swift
 //  WordScramble
 //
 //  Created by Michael Danko on 7/9/22.
