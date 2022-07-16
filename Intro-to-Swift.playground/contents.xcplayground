@@ -9,5 +9,6 @@
         <page name='Protocols-and-Extensions'/>
         <page name='Optionals'/>
         <page name='Stacks-Colors-and-Frames'/>
+        <page name='Animations.xcplaygroundpage'/>
     </pages>
 </playground>

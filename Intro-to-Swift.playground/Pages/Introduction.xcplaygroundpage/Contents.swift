@@ -9,6 +9,7 @@
 //: * [Protocols and Extensions](Protocols-and-Extensions)
 //: * [Optionals](Optionals)
 //: * [Stacks Colors and Frames] (Stacks-Colors-and-Frames)
+//: * [Animations] (Animations)
 
 
 
