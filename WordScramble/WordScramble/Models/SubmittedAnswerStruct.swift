@@ -1,5 +1,5 @@
 //
-//  SubmittedAnswer.swift
+//  SubmittedAnswerStruct.swift
 //  WordScramble
 //
 //  Created by Michael Danko on 7/9/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SubmittedAnswer {
+struct SubmittedAnswer: Identifiable {
     var id = UUID().uuidString
     
     var word: String

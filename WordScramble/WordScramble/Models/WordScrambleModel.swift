@@ -8,7 +8,12 @@
 import Foundation
 import UIKit
 
-
+enum ValidationErrors: Error {
+    case wordNotPossible
+    case wordNotSpelledCorrectly
+    case wordNotOriginal
+}
+ 
 struct WordScrambleModel {
     
     public var wordArray = [String]()
@@ -19,12 +24,22 @@ struct WordScrambleModel {
     
     public var playerScore = 0
     
-    public var errorTitle = ""
-    public var errorMessage = ""
+    public var errorTitle = "Error Title"
+    public var errorMessage = "Error Message"
+    
+    public var gameInstructions: String = """
+    Players will get a score for each attempt that is based upon the length of the submitted word.
+    
+    Words between 1 and 3 characters will get 1x the word length.
+    
+    Words between 4 and 6 characters will get 1x the word length +2 bonus points.
+    
+    All other words will get 1x the word length +3 bonus points.
+    """
     
     init() {
         loadWordFile()
-        setNewRootWord()
+        resetRootWord()
     }
     
     mutating func loadWordFile() {
@@ -37,28 +52,24 @@ struct WordScrambleModel {
         fatalError("The text file `start.txt` was unable to be loaded.")
     }
     
-    mutating func setNewRootWord() {
+    mutating func resetRootWord() {
         self.rootWord = self.wordArray.randomElement() ?? "ravenger"
+        self.playerScore = 0
     }
     
-    mutating func makeWordSubmission(_ answer: SubmittedAnswer) -> Bool {
+    mutating func makeWordSubmission(_ answer: SubmittedAnswer) throws {
         
-        if isWordPossible(answer.word) == false {
-            return false
-        }
-        if isWordSpelledCorrectly(answer.word) == false {
-            return false
-        }
-        if isWordOriginalGuess(answer.word) == false {
-            return false
-        }
-        
+        if isWordPossible(answer.word) == false { throw ValidationErrors.wordNotPossible }
+        if isWordSpelledCorrectly(answer.word) == false { throw ValidationErrors.wordNotSpelledCorrectly }
+        if isWordOriginalGuess(answer.word) == false { throw ValidationErrors.wordNotOriginal }
         saveSubmittedAnswer(answer: answer)
-        return true
     }
     
     
     mutating func isWordPossible(_ submittedWord: String) -> Bool {
+        if submittedWord.isEmpty {
+            return false
+        }
         var rootWordCopy = self.rootWord
 
         for letter in submittedWord {
@@ -71,7 +82,6 @@ struct WordScrambleModel {
             }
         }
         return true
-        
     } // End of `isWordPossible` function
     
     mutating func isWordSpelledCorrectly(_ submittedWord:String) -> Bool {
@@ -81,12 +91,11 @@ struct WordScrambleModel {
         let range = NSRange(location: 0, length: submittedWord.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(in: submittedWord, range: range, startingAt: 0, wrap: false,language: "en")
         
-        errorTitle = "Spelled incorrectly"
-        errorMessage = "The submitted word is not spelled correctly."
+        errorTitle = "Not a word / Spelled incorrectly"
+        errorMessage = "The submitted word is either not a real word or is spelled incorrectly."
 
         // This code checks to see if the location of the misspelled word is `NSNotFound` or the Obj-C equivalent of `nil`.
         return misspelledRange.location == NSNotFound
-        
     } // End of `isWordSpelledCorrectly` function
     
     
@@ -104,7 +113,6 @@ struct WordScrambleModel {
     
     
     mutating func saveSubmittedAnswer(answer: SubmittedAnswer) {
-        
         // Need to add word to the list of words already submitted.
         guessedWords.insert(answer.word)
         submittedAnswers.insert(answer, at: 0)
