@@ -24,13 +24,19 @@ struct WordScrambleView: View {
 //        UITableView.appearance().backgroundColor = .clear
 //    }
     
+    func submitAnswer() {
+        do {
+           try viewModel.makeWordSubmission(newWordSubmission)
+            displayError = false
+        } catch {
+            displayError = true
+        }
+    }
+    
+    
     var body: some View {
         ZStack {
-            LinearGradient(colors: [.appOrange, .appPurple, .appBlue],
-                           startPoint: .topTrailing,
-                           endPoint: .bottomTrailing)
-                .ignoresSafeArea()
-                .opacity(0.80)
+            BackgroundGradientView()
             VStack {
                 
                 HStack {
@@ -41,6 +47,7 @@ struct WordScrambleView: View {
                                 .frame(minHeight: 30)
                                 .foregroundColor(.appBlue)
                                 .padding(.bottom)
+                                .imageScale(.large)
                     }
                     Spacer()
                     Text("WordScramble")
@@ -57,6 +64,7 @@ struct WordScrambleView: View {
                                 .frame(minHeight: 30)
                                 .foregroundColor(.appBlue)
                                 .padding(.bottom)
+                                .imageScale(.large)
                     }
                 }
                 .frame(maxHeight: 40, alignment: .top)
@@ -78,23 +86,18 @@ struct WordScrambleView: View {
                 HStack {
                 
                     TextField("Enter answer here", text: $newWordSubmission)
+                        .textCase(.uppercase)
                         .padding(5)
                         .frame(minHeight: 25)
                         .background {
                             RoundedRectangle(cornerRadius: 5).fill(Color.appTextBackground)
                         }
                         .border(displayError ? Color.appErrorRed : .clear, width: 2)
-                    Button() {
-                        print("submitted; attempting to call function that might throw")
-                        
-                        do {
-                           try viewModel.makeWordSubmission(newWordSubmission)
-                            displayError = false
-                        } catch {
-                            print("caught an error within the view")
-                            displayError = true
+                        .onSubmit {
+                            submitAnswer()
                         }
-                        
+                    Button() {
+                        submitAnswer()
                     } label: {
                         ZStack {
                             Capsule(style: .circular)
@@ -117,26 +120,29 @@ struct WordScrambleView: View {
                     .frame(maxWidth: .infinity, maxHeight: 120, alignment: .center)
                     .background {
                         Rectangle()
-                            .background(.thickMaterial)
+                            .background(.ultraThinMaterial)
                             .border(displayError ? Color.appErrorRed : .clear, width: 2)
                     }
                 }
-                List(viewModel.submittedAnswers) { item in
-                    HStack {
-                        Text("\(item.pointValue)")
-                        Text("\(item.word)")
-                            .bold()
+                
+                if viewModel.submittedAnswers.count > 0 {
+                    List(viewModel.submittedAnswers) { item in
+                        HStack {
+                            Text("\(item.pointValue)")
+                            Text("\(item.word.uppercased())")
+                                .bold()
+                        }
                     }
+                    .listStyle(.automatic)
+                    .cornerRadius(5)
+                    .scrollContentBackground(
+                        Color.appInvertedText.opacity(0.15)
+                    )
                 }
-                
-                
-                
-                
                 Spacer()
-            
             } // End of VStack
                 .padding()
-
+            
         } // End of ZStack
 
             .alert(isPresented: $displayHelpText, content: {

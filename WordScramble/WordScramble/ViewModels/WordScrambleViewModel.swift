@@ -50,8 +50,6 @@ class WordScrambleViewModel: ObservableObject {
     }
 
     func makeWordSubmission(_ word: String) throws {
-        print("calling makeWordSubmission inside the ViewModel")
-        
         let answer = SubmittedAnswer(word: word.lowercased().trimmingCharacters(in: .whitespacesAndNewlines))
         
         do {

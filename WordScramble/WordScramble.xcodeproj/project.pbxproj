@@ -13,6 +13,7 @@
 		DA1225452878EA91007C4BFB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1225442878EA91007C4BFB /* Preview Assets.xcassets */; };
 		DA12254C2878EB77007C4BFB /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = DA12254B2878EB77007C4BFB /* start.txt */; };
 		DA12254F2878EBA5007C4BFB /* WordScrambleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12254E2878EBA5007C4BFB /* WordScrambleViewModel.swift */; };
+		DAC8BA792882EB5C00FCF483 /* BackgroundGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC8BA782882EB5C00FCF483 /* BackgroundGradientView.swift */; };
 		DAF902262879357600B37887 /* SubmittedAnswerStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF902252879357600B37887 /* SubmittedAnswerStruct.swift */; };
 		DAF902282879944200B37887 /* WordScrambleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF902272879944200B37887 /* WordScrambleModel.swift */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,7 @@
 		DA1225442878EA91007C4BFB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DA12254B2878EB77007C4BFB /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 		DA12254E2878EBA5007C4BFB /* WordScrambleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleViewModel.swift; sourceTree = "<group>"; };
+		DAC8BA782882EB5C00FCF483 /* BackgroundGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientView.swift; sourceTree = "<group>"; };
 		DAF902252879357600B37887 /* SubmittedAnswerStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmittedAnswerStruct.swift; sourceTree = "<group>"; };
 		DAF902272879944200B37887 /* WordScrambleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				DA12253F2878EA90007C4BFB /* WordScrambleView.swift */,
+				DAC8BA782882EB5C00FCF483 /* BackgroundGradientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC8BA792882EB5C00FCF483 /* BackgroundGradientView.swift in Sources */,
 				DA12254F2878EBA5007C4BFB /* WordScrambleViewModel.swift in Sources */,
 				DAF902282879944200B37887 /* WordScrambleModel.swift in Sources */,
 				DAF902262879357600B37887 /* SubmittedAnswerStruct.swift in Sources */,
@@ -315,6 +319,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,6 +349,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

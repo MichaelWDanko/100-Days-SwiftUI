@@ -113,8 +113,6 @@ struct WordScrambleModel {
     
     
     mutating func saveSubmittedAnswer(answer: SubmittedAnswer) {
-        
-        print("Calling saveSubmittedAnswer")
         // Need to add word to the list of words already submitted.
         guessedWords.insert(answer.word)
         submittedAnswers.insert(answer, at: 0)
