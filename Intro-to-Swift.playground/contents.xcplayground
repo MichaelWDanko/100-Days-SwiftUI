@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='Introduction'/>
+        <page name='Functions'/>
+        <page name='Closures'/>
+        <page name='Structs'/>
+        <page name='Classes'/>
+        <page name='Protocols-and-Extensions'/>
+        <page name='Optionals'/>
+        <page name='Stacks-Colors-and-Frames'/>
+        <page name='Refresher'/>
+    </pages>
+</playground>
