@@ -19,7 +19,6 @@ struct ContentView: View {
     @State private var customTipAmount = 0.0
     
     private var amountPerPerson : Double {
-        
         switch selectedTipPercentage {
         case "No Tip":
             print("There is no tip!")
@@ -34,6 +33,8 @@ struct ContentView: View {
         }
     }
     
+    @FocusState private var amountIsFocused: Bool
+    
     var body: some View {
         NavigationStack {
             Form {
@@ -41,6 +42,7 @@ struct ContentView: View {
                     TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .submitLabel(.continue)
                         .keyboardType(.decimalPad)
+                        .focused($amountIsFocused)
                 }
                 
                 Section("How many people are there?") {
@@ -70,8 +72,16 @@ struct ContentView: View {
                 Section("Amount Per Person") {
                     Text(amountPerPerson, format: .currency(code: "USD"))
                 }
+            } // End of Form
+            .navigationTitle("WeSplit")
+            .toolbar {
+                if amountIsFocused {
+                    Button("Done") {
+                        amountIsFocused.toggle()
+                    }
+                }
             }
-        }
+        } // End of NavigationStack
     }
 }
 
